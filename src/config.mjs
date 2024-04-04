@@ -1,20 +1,15 @@
 export default {
-    title: "Homepage",
-    titleSuffix: " | Pacamara ☕",
-    description: "Aromatic brew, pure indulgence, exquisite satisfaction.Default description",
+    title: "Home",
+    titleSuffix: " | Guerreiro de Palmares ☕",
+    description: "Il gruppo di Capoeira Angola Guerreiro de Palmares di Pisa",
     defaultOgImage: "./defaultog.jpg",
     latestPosts: 3,
     postsPerPage: 3,
-    url: "https://pacamara-astro-6y7xr.kinsta.page",
+    url: "https://guerreirodepalmares.it",
     social: {
-        'dribbble': false,
-        'facebook': false,
-        'github': 'https://github.com/palmiak',
-        'instagram': false,
-        'mastodon': false,
-        'pinterest': false,
-        'skype': false,
-        'twitter': 'https://twitter.com/palmiak_fp'
-
+        'facebook': 'https://facebook.com/GuerreiroDePalmaresPisa',
+        'youtube': 'https://www.youtube.com/user/palmarespisa',
+        'instagram': 'https://www.instagram.com/capoeiraguerreiropalmarespisa',
+        'twitter': 'https://twitter.com/CapoeiraPisa'
     }
 }
