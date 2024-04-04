@@ -1,5 +1,5 @@
 ---
 title: "La Capoeira"
 intro: capoeira
-image: ../../assets/lazaro.jpg
+image: ../../assets/logo-disegnato.jpg
 ---
