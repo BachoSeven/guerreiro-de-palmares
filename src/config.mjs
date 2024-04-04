@@ -1,6 +1,6 @@
 export default {
     title: "Home",
-    titleSuffix: " | Guerreiro de Palmares ☕",
+    titleSuffix: " | Guerreiro de Palmares",
     description: "Il gruppo di Capoeira Angola Guerreiro de Palmares di Pisa",
     defaultOgImage: "./defaultog.jpg",
     latestPosts: 3,
