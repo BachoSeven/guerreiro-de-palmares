@@ -3,6 +3,8 @@ title: Vadiando con Mestre Omi
 author: galo
 pubDate: 2024-11-19T18:16:00.000Z
 image: ../../assets/uploads/a.jpeg
+intro: Sabato 30 novembre, presso il Circolo Arci "Casa del Popolo" a Campo, Pisa, a partire dalle 14 si svolgerà un workshop di capoeira 🤸🏻‍♂️ e danza 💃 con Mestre Omi.
+tag: workshop
 ---
 Sabato 30 novembre, presso il Circolo Arci "Casa del Popolo" a Campo, Pisa, a partire dalle 14 si svolgerà un workshop di capoeira 🤸🏻‍♂️ e danza 💃 con Mestre Omi.
 
