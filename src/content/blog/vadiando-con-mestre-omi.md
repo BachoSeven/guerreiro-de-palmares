@@ -1,5 +1,5 @@
 ---
-title: Vadiando con Mestre Omi
+title: Vadiando con Mestre Omiasdf
 author: galo
 pubDate: 2024-11-19T18:16:00.000Z
 image: /images/uploads/a.jpeg
