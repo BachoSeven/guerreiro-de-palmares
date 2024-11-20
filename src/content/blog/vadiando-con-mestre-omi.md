@@ -17,7 +17,7 @@ Mestre Omi vive a New York, dove insegna capoeira nel suo gruppo "Ile de Palmare
 ## Orari
 
 * **14.00 - 17.00**, *Workshop di capoeira*: un insieme di nozioni che trasformano la lotta in movimenti armonici e a ritmo di percussioni.
-* **17.00 - 19.00**, *workshop di danza*: faremo un viaggio all'interno della ritmica afrobrasiliana approfondendo vari stili di danza, rituali, folkloristici e di coppia: orixas, samba de roda, forro.
+* **17.00 - 19.00**, *workshop di danza*: faremo un viaggio all'interno della ritmica afrobrasiliana approfondendo vari stili di danza, rituali, folkloristici e di coppia: orixas, samba de roda, forró.
 * **Ore 20.30**: *Cena*
 * **A seguire,** *Musica brasiliana live*: "Jays do Brasil"
 
@@ -25,8 +25,8 @@ Vi aspettiamo presso il Circolo Arci "Casa del Popolo" Campo, Via G. Toniolo, 12
 
 ## Prezzi:
 
-- **Stage** (tutti o a scelta, prezzo invariato): 25€
-- **Cena**: 20€
-- **Stage + cena**: 40€
+* **Stage** (tutti o a scelta, prezzo invariato): 25€
+* **Cena**: 20€
+* **Stage + cena**: 40€
 
 *Necessaria tessera Arci*, sarà possibile tesserarsi in Loco!
