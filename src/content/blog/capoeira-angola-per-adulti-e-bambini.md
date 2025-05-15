@@ -5,7 +5,7 @@ intro: Allenamenti di capeoira angola per adulti e bambini! Vieni a trovarci al
 tag: Allenamenti
 author: galo
 pubDate: 2025-01-30T14:57:00.000Z
-image: src/assets/uploads/volantino-capoeira-24-25-arci.png
+image: ../../assets/uploads/volantino-capoeira-24-25-arci.png
 ---
 ## Orari allenamenti
 
