@@ -54,7 +54,7 @@ const { Content } = await entry.render();
     ) : (
       <>
         {entry.data.image && (
-          <button type="button" data-image-popup-trigger class="mx-auto mt-8 sm:mt-10 block w-full max-w-3xl cursor-zoom-in">
+          <button type="button" data-image-popup-trigger class="mx-auto mt-8 sm:mt-10 block w-fit max-w-full cursor-zoom-in">
             <Image
               src={entry.data.image}
               width={entry.data.image.width}
@@ -62,7 +62,7 @@ const { Content } = await entry.render();
               alt={entry.data.title}
               loading="eager"
               decoding="sync"
-              class="block relative w-full h-auto max-h-[58vh] object-cover shadow-sm rounded-[15px] image-shine"
+              class="block relative w-auto max-w-full h-auto max-h-[85vh] object-contain shadow-sm rounded-[15px] image-shine"
             />
           </button>
         )}
@@ -88,49 +88,13 @@ const { Content } = await entry.render();
 
 {entry.data.image && (
   <dialog data-image-popup class="image-popup">
-    <div class="relative overflow-hidden rounded-[18px]">
+    <div class="relative overflow-hidden rounded-[18px] bg-white p-2 sm:p-4 shadow-2xl dark:bg-pacamara-dark">
       <button type="button" data-image-popup-close aria-label="Chiudi immagine" class="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-xl text-pacamara-dark shadow-lg transition hover:bg-pacamara-accent hover:text-white dark:bg-pacamara-dark/90 dark:text-white">
         ×
       </button>
-      <img data-image-popup-image alt={entry.data.title} class="block w-auto max-w-full rounded-[18px] object-contain" />
+      <img data-image-popup-image alt={entry.data.title} class="block w-auto max-w-full rounded-[18px] object-contain mx-auto max-h-[82vh]" />
     </div>
   </dialog>
-  <script is:inline>
-    const articleRoot = document.querySelector('[data-image-popup-root]');
-    const imagePopup = document.querySelector('[data-image-popup]');
-    const imagePopupImage = imagePopup?.querySelector('[data-image-popup-image]');
-    const imagePopupClose = imagePopup?.querySelector('[data-image-popup-close]');
-
-    const openImagePopup = (sourceImage) => {
-      if (!(imagePopup instanceof HTMLDialogElement) || !(imagePopupImage instanceof HTMLImageElement) || !(sourceImage instanceof HTMLImageElement)) {
-        return;
-      }
-
-      imagePopupImage.src = sourceImage.currentSrc || sourceImage.src;
-      imagePopupImage.alt = sourceImage.alt || '';
-      imagePopupImage.srcset = sourceImage.srcset || '';
-      imagePopupImage.sizes = sourceImage.sizes || '';
-
-      if (!imagePopup.open) {
-        imagePopup.showModal();
-      }
-    };
-
-    articleRoot?.addEventListener('click', (event) => {
-      const trigger = event.target.closest?.('[data-image-popup-trigger]');
-      if (trigger) {
-        event.preventDefault();
-        openImagePopup(trigger.querySelector('img'));
-      }
-    });
-
-    imagePopupClose?.addEventListener('click', () => imagePopup?.close());
-    imagePopup?.addEventListener('click', (event) => {
-      if (event.target === imagePopup) {
-        imagePopup.close();
-      }
-    });
-  </script>
 )}
 
 {isSongbookPage && (

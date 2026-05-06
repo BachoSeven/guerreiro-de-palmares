@@ -76,42 +76,6 @@ const author = await getEntry(entry.data.author);
       <img data-image-popup-image alt={entry.data.title} class="block max-h-[82vh] w-auto max-w-full rounded-[18px] object-contain mx-auto" />
     </div>
   </dialog>
-  <script is:inline>
-    const articleRoot = document.querySelector('[data-image-popup-root]');
-    const imagePopup = document.querySelector('[data-image-popup]');
-    const imagePopupImage = imagePopup?.querySelector('[data-image-popup-image]');
-    const imagePopupClose = imagePopup?.querySelector('[data-image-popup-close]');
-
-    const openImagePopup = (sourceImage) => {
-      if (!(imagePopup instanceof HTMLDialogElement) || !(imagePopupImage instanceof HTMLImageElement) || !(sourceImage instanceof HTMLImageElement)) {
-        return;
-      }
-
-      imagePopupImage.src = sourceImage.currentSrc || sourceImage.src;
-      imagePopupImage.alt = sourceImage.alt || '';
-      imagePopupImage.srcset = sourceImage.srcset || '';
-      imagePopupImage.sizes = sourceImage.sizes || '';
-
-      if (!imagePopup.open) {
-        imagePopup.showModal();
-      }
-    };
-
-    articleRoot?.addEventListener('click', (event) => {
-      const trigger = event.target.closest?.('[data-image-popup-trigger]');
-      if (trigger) {
-        event.preventDefault();
-        openImagePopup(trigger.querySelector('img'));
-      }
-    });
-
-    imagePopupClose?.addEventListener('click', () => imagePopup?.close());
-    imagePopup?.addEventListener('click', (event) => {
-      if (event.target === imagePopup) {
-        imagePopup.close();
-      }
-    });
-  </script>
 )}
 
 <AuthorInfo authorData={author} />

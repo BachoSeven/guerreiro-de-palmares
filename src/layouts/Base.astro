@@ -46,5 +46,69 @@ const { postData } = Astro.props;
     <slot />
 
     <Footer />
+
+    <script is:inline>
+        const initImagePopups = () => {
+            document.querySelectorAll('[data-image-popup-root]').forEach((root) => {
+                if (!(root instanceof HTMLElement) || root.dataset.imagePopupBound === 'true') {
+                    return;
+                }
+
+                const popup = document.querySelector('[data-image-popup]');
+                const popupImage = popup?.querySelector('[data-image-popup-image]');
+                const popupClose = popup?.querySelector('[data-image-popup-close]');
+
+                if (!(popup instanceof HTMLDialogElement) || !(popupImage instanceof HTMLImageElement)) {
+                    return;
+                }
+
+                root.dataset.imagePopupBound = 'true';
+
+                const openPopup = (sourceImage) => {
+                    if (!(sourceImage instanceof HTMLImageElement)) {
+                        return;
+                    }
+
+                    popupImage.src = sourceImage.currentSrc || sourceImage.src;
+                    popupImage.alt = sourceImage.alt || '';
+                    popupImage.srcset = sourceImage.srcset || '';
+                    popupImage.sizes = sourceImage.sizes || '';
+
+                    if (!popup.open) {
+                        popup.showModal();
+                    }
+                };
+
+                root.addEventListener('click', (event) => {
+                    const trigger = event.target.closest?.('[data-image-popup-trigger]');
+                    if (!trigger) {
+                        return;
+                    }
+
+                    event.preventDefault();
+                    openPopup(trigger.querySelector('img'));
+                });
+
+                popupClose?.addEventListener('click', () => popup.close());
+                popup.addEventListener('click', (event) => {
+                    if (event.target === popup) {
+                        popup.close();
+                    }
+                });
+            });
+        };
+
+        const runImagePopupInit = () => {
+            initImagePopups();
+        };
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', runImagePopupInit, { once: true });
+        } else {
+            runImagePopupInit();
+        }
+
+        document.addEventListener('astro:after-swap', initImagePopups);
+    </script>
 </body>
 </html>
