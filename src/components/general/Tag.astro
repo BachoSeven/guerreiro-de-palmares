@@ -2,7 +2,7 @@
 const { tag } = Astro.props;
 ---
 {tag &&
-<span class="group text-[16px] bg-transparent border-pacamara-secondary border-[1px] leading-none rounded-full flex flex-row content-center items-center h-[34px] px-3 text-pacamara-secondary">
-    <span>{tag}</span>
+<span class={`group text-[16px] leading-none rounded-full flex flex-row content-center items-center h-[34px] px-3 border-[1px] transition-all duration-300 ${tag === 'allenamenti' ? 'bg-pacamara-accent border-pacamara-accent text-pacamara-dark font-bold shadow-sm' : 'bg-transparent border-pacamara-secondary text-pacamara-secondary'}`}>
+    <span class={tag === 'allenamenti' ? 'tracking-wide text-[14px]' : ''}>{tag}</span>
 </span>
 }

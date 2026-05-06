@@ -75,15 +75,56 @@
 }
 
 .image-shine {
-    -webkit-mask: 
-    linear-gradient(135deg,#000c 20%,#000,#000c 80%)
-    100% 100%/250% 250%;
-
     @apply transition-all duration-300;
 }
 
 .image-shine:hover {
-    -webkit-mask-position: 0 0;
+    transform: translateY(-1px) scale(1.01);
+    filter: saturate(1.03);
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+dialog.image-popup {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    width: auto;
+    height: auto;
+    max-width: 96vw;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+dialog.image-popup[open] {
+    display: flex;
+}
+
+dialog.image-popup > div {
+    width: fit-content;
+    height: fit-content;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+dialog.image-popup img {
+    max-height: 90vh;
+    display: block;
+}
+
+dialog.image-popup::backdrop {
+    background: rgba(10, 14, 20, 0.82);
+    backdrop-filter: blur(8px);
 }
 
 html {
@@ -102,5 +143,128 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
     background-image: linear-gradient(180deg,theme('colors.pacamara-secondary'),theme('colors.pacamara-accent'));
     outline: 0px solid theme('colors.pacamara-accent');
+    border-radius: 8px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+/* Hide scrollbar on canzoni page to eliminate visual artifacts */
+article[data-songbook="true"] {
+    scrollbar-width: none;
+}
+
+article[data-songbook="true"]::-webkit-scrollbar {
+    display: none;
+}
+
+details {
+    margin: 0;
+}
+
+details summary {
+    outline: none;
+}
+
+details[open] summary {
+    color: theme('colors.pacamara-secondary');
+}
+
+details[open] summary:hover {
+    color: theme('colors.pacamara-accent');
+}
+
+.dark details[open] summary {
+    color: theme('colors.pacamara-accent');
+}
+
+article[data-songbook="true"] hr {
+    border-color: color-mix(in srgb, theme('colors.pacamara-secondary') 18%, transparent) !important;
+    margin-top: 2.4rem !important;
+    margin-bottom: 2.4rem !important;
+}
+
+.dark article[data-songbook="true"] hr {
+    border-color: color-mix(in srgb, theme('colors.pacamara-accent') 22%, transparent) !important;
+}
+
+article[data-songbook="true"] audio {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid color-mix(in srgb, theme('colors.pacamara-secondary') 28%, transparent);
+    background: linear-gradient(135deg, color-mix(in srgb, theme('colors.pacamara-secondary') 12%, white), color-mix(in srgb, theme('colors.pacamara-accent') 10%, white));
+    box-shadow: 0 4px 12px rgba(0, 48, 64, 0.06);
+    padding: 0;
+    margin: 0;
+}
+
+.dark article[data-songbook="true"] audio {
+    border-color: color-mix(in srgb, theme('colors.pacamara-accent') 36%, transparent);
+    background: linear-gradient(135deg, color-mix(in srgb, theme('colors.pacamara-dark') 82%, black), color-mix(in srgb, theme('colors.pacamara-secondary') 24%, black));
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+}
+
+article[data-songbook="true"] details {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    padding: 0;
     border-radius: 10px;
+    border: 1px solid color-mix(in srgb, theme('colors.pacamara-secondary') 26%, transparent);
+    background: color-mix(in srgb, theme('colors.pacamara-secondary') 6%, white);
+    transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.dark article[data-songbook="true"] details {
+    border-color: color-mix(in srgb, theme('colors.pacamara-accent') 30%, transparent);
+    background: color-mix(in srgb, theme('colors.pacamara-accent') 8%, theme('colors.pacamara-dark'));
+}
+
+article[data-songbook="true"] details:hover {
+    border-color: color-mix(in srgb, theme('colors.pacamara-secondary') 45%, transparent);
+    box-shadow: 0 8px 22px rgba(0, 48, 64, 0.08);
+}
+
+article[data-songbook="true"] details summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 0.95rem 1rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-weight: 700;
+    user-select: none;
+}
+
+article[data-songbook="true"] details summary::-webkit-details-marker {
+    display: none;
+}
+
+article[data-songbook="true"] details summary::before {
+    content: "▸";
+    font-size: 0.95rem;
+    line-height: 1;
+    transition: transform 180ms ease;
+    transform-origin: 45% 50%;
+}
+
+article[data-songbook="true"] details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+article[data-songbook="true"] details > div {
+    margin-top: 0;
+    padding: 0 1rem 1rem 2.2rem;
+}
+
+article[data-songbook="true"] details.song-lyrics--auto-open {
+    animation: songLyricsPulse 380ms ease-out;
+}
+
+@keyframes songLyricsPulse {
+    0% {
+        box-shadow: 0 0 0 0 color-mix(in srgb, theme('colors.pacamara-accent') 45%, transparent);
+    }
+    100% {
+        box-shadow: 0 0 0 12px transparent;
+    }
 }

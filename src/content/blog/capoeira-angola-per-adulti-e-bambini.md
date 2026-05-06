@@ -2,19 +2,17 @@
 title: Capoeira Angola Per Adulti e Bambini
 intro: Allenamenti di capeoira angola per adulti e bambini! Vieni a trovarci al
   Circolo Il Cavallino Rosso
-tag: Allenamenti
+tag: allenamenti
 author: galo
-pubDate: 2025-01-30T14:57:00.000Z
-image: ../../assets/uploads/volantino-capoeira-24-25-arci.png
+pubDate: 2025-10-01T14:30:00.000Z
+image: ../../assets/volantino-capoeira+25-26.png
 ---
 ## Orari allenamenti
 
-**Martedì**
+### Adulti e Adolescenti (12 anni in sù)
 
-17:30 18:30 Bambini
+**Martedì e giovedì**: 19:00 21:00 
 
-19:00 21:00 Adulti
+### Bambini (6-11 anni)
 
-**Giovedì**
-
-19:00 21:00 Adulti
+**Martedì**: 17:30 18:30

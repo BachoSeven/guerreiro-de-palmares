@@ -9,7 +9,6 @@ export default {
     social: {
         'facebook': 'https://facebook.com/GuerreiroDePalmaresPisa',
         'youtube': 'https://www.youtube.com/user/palmarespisa',
-        'instagram': 'https://www.instagram.com/capoeiraguerreiropalmarespisa',
-        'twitter': 'https://twitter.com/CapoeiraPisa'
+        'instagram': 'https://www.instagram.com/capoeiraguerreiropalmarespisa'
     }
 }

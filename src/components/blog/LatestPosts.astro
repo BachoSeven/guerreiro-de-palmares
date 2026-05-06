@@ -1,19 +1,44 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 import Post from "./Post.astro";
 import config from "../../config.mjs";
+import Tag from "../general/Tag.astro";
 
 const { postLimit = config.latestPosts, skipPost = "" } = Astro.props;
 
 const posts = (await getCollection('blog', ({ data }) => {
-    return !(data.title == skipPost) ;
+  return !(data.title == skipPost) ;
   })).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-  ).slice(0, postLimit);
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  );
+
+const latestAllenamenti = posts.find((post) => post.data.tag === 'allenamenti');
+const postsWithoutAllenamenti = posts.filter((post) => post.data.tag !== 'allenamenti');
+const visiblePosts = postsWithoutAllenamenti.slice(0, latestAllenamenti ? Math.max(postLimit - 1, 0) : postLimit);
 ---
 <section class="container mx-auto max-w-screen-lg px-7 py-10 mb-10">
+  {latestAllenamenti && (
+    <article class="group mb-10 overflow-hidden rounded-[24px] border border-pacamara-secondary/20 bg-gradient-to-br from-pacamara-accent/15 via-white to-white shadow-pacamara-shadow dark:from-pacamara-accent/10 dark:via-pacamara-dark dark:to-pacamara-dark">
+      <div class="flex flex-col gap-6 p-6 sm:p-8 lg:flex-row lg:items-center lg:p-10">
+        <div class="flex-1">
+          <h2 class="font-pacamara-space text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wider bg-gradient-to-r from-pacamara-accent to-pacamara-secondary bg-clip-text text-transparent dark:from-pacamara-accent dark:to-pacamara-secondary transition-all duration-300 mb-4 drop-shadow-sm">
+            Orari Allenamenti
+          </h2>
+          <p class="mt-4 max-w-2xl text-[16px] leading-7 text-pacamara-primary/80 dark:text-white/70">
+            {latestAllenamenti.data.intro}
+          </p>
+        </div>
+        {latestAllenamenti.data.image && (
+          <a href={`/blog/${latestAllenamenti.slug}`} class="block flex-none overflow-hidden rounded-[18px] lg:w-[320px]">
+            <Image src={latestAllenamenti.data.image} alt={latestAllenamenti.data.title} class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" />
+          </a>
+        )}
+      </div>
+    </article>
+  )}
     {
-        posts.map((post, index) => {
+    visiblePosts.map((post, index) => {
           return <Post postData={post} num={index} />;
         })
     }

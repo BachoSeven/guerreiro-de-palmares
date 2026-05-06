@@ -5,8 +5,8 @@ const { socialUrl=false, socialType } = Astro.props;
 ---
 {socialUrl &&
 <li>
-    <a href={socialUrl} target="_blank" aria-label={socialType + "link"}>
-        <Icon name={socialType} class="w-auto h-[20px] transition-all duration-300 fill-pacamara-primary/60 hover:fill-pacamara-secondary dark:fill-pacamara-accent dark:hover:fill-pacamara-secondary" />
+    <a href={socialUrl} target="_blank" rel="noreferrer noopener" aria-label={`${socialType} link`} class="group flex h-11 w-11 items-center justify-center rounded-full border border-pacamara-secondary/20 bg-pacamara-secondary/10 text-pacamara-secondary shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-pacamara-accent/40 hover:bg-pacamara-accent hover:text-white dark:border-pacamara-accent/20 dark:bg-pacamara-accent/10 dark:text-pacamara-accent dark:hover:border-pacamara-secondary/40 dark:hover:bg-pacamara-secondary dark:hover:text-pacamara-dark">
+        <Icon name={socialType} class="h-[18px] w-[18px] transition-all duration-300 fill-current" />
     </a>
 </li>
 }
