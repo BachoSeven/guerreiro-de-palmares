@@ -12,7 +12,7 @@ Nel 2013 Galo Preto riceve da Mestre Lazaro la prima corda di graduado, assumend
 
 ### Contra Mestre Galo Preto
 
-Stefano Tomesani scopre la capoeira nei primi anni Duemila e diventa uno dei pionieri della scena pisana. Dopo la fase iniziale nella capoeira regional, entra nel percorso di Capoeira Angola Palmares. Nel 2013 riceve da Mestre Lazaro la prima corda di graduado, assumendo ufficialmente il ruolo di Monitor. Continua il suo percorso formativo fino a ricevere il titolo di Contra Mestre, consolidando il suo ruolo di guida per il Guerreiro di Palmares di Pisa.
+Stefano Tomesani scopre la capoeira nei primi anni Duemila e diventa uno dei pionieri della scena pisana. Dopo la fase iniziale nella capoeira regional, entra nel percorso di Capoeira Angola Palmares. Nel 2013 riceve da Mestre Lazaro la prima corda di graduado, assumendo ufficialmente il ruolo di Monitor. Continua il suo percorso formativo fino a ricevere il titolo di Contra Mestre nel 2024.
 
 ### Contra Mestre Malicia
 
