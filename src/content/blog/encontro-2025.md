@@ -3,7 +3,7 @@ title: IV Encontro Anual Guerreiro de Palmares Pisa
 intro: 30 maggio - 1 giugno 2025
 tag: workshop
 author: galo
-pubDate: 2025-05-15T15:16:00.000Z
+pubDate: 2025-05-15
 image: ../../assets/encontro-anual-2025.jpg
 ---
 

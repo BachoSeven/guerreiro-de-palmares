@@ -3,7 +3,7 @@ title: V Encontro Anual Guerreiro de Palmares Pisa
 intro: 15-17 maggio 2026
 tag: workshop
 author: galo
-pubDate: 2026-05-06T10:00:00.000Z
+pubDate: 2026-05-06
 image: ../../assets/encontro-anual-2026.jpg
 ---
 

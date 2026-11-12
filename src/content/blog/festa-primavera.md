@@ -3,7 +3,7 @@ title: IV Festa di Primavera a Campo
 intro: 18-19 aprile
 tag: workshop
 author: galo
-pubDate: 2026-04-14T10:00:00.000Z
+pubDate: 2026-04-14
 image: ../../assets/primavera-2026.jpeg
 ---
 

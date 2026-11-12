@@ -22,13 +22,19 @@ const { entry } = Astro.props;
 entry.data.type = "blog";
 const isGalleryPage = entry.slug === "galleria";
 const isSongbookPage = entry.slug === "canzoni";
-const galleryImages = [
+const fallbackGalleryImages = [
   { src: slide1, alt: "Guerreiro di Palmares - immagine 1" },
   { src: slide2, alt: "Guerreiro di Palmares - immagine 2" },
   { src: slide3, alt: "Guerreiro di Palmares - immagine 3" },
   { src: slide4, alt: "Guerreiro di Palmares - immagine 4" },
   { src: slide5, alt: "Guerreiro di Palmares - immagine 5" },
 ];
+const galleryImages = entry.data.gallery?.length
+  ? entry.data.gallery.map((src, index) => ({
+      src,
+      alt: `${entry.data.title} - immagine ${index + 1}`,
+    }))
+  : fallbackGalleryImages;
 const galleryCoverImage = entry.data.image ? [{ src: entry.data.image, alt: entry.data.title }] : [];
 const galleryGridImages = [...galleryCoverImage, ...galleryImages];
 

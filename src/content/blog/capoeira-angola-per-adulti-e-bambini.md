@@ -4,7 +4,7 @@ intro: Allenamenti di capeoira angola per adulti e bambini! Vieni a trovarci al
   Circolo Il Cavallino Rosso
 tag: allenamenti
 author: galo
-pubDate: 2025-10-01T14:30:00.000Z
+pubDate: 2025-10-01
 image: ../../assets/volantino-capoeira+25-26.png
 ---
 ## Orari allenamenti

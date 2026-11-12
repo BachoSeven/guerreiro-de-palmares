@@ -1,0 +1,192 @@
+# Pages CMS configuration
+# Docs: https://pagescms.org/docs/configuration/
+#
+# Content is stored in the same Markdown/JSON files already used by Astro.
+# Netlify rebuilds automatically on every commit made by the CMS.
+
+media:
+  # Uploads go to src/assets/, and the value written into frontmatter is
+  # relative to the content file (../../assets/...), as required by Astro's
+  # image() schema.
+  input: src/assets
+  output: ../../assets
+  rename: safe
+
+settings:
+  content:
+    merge: true
+  commit:
+    identity: user
+    templates:
+      create: "CMS: crea {path}"
+      update: "CMS: aggiorna {path}"
+      delete: "CMS: elimina {path}"
+      rename: "CMS: rinomina {oldPath} -> {newPath}"
+
+content:
+  - name: blog
+    label: Blog
+    type: collection
+    path: src/content/blog
+    filename: "{primary}.md"
+    view:
+      primary: title
+      sort: pubDate
+      order: desc
+    fields:
+      - name: title
+        label: Titolo
+        type: string
+        required: true
+        description: "Titolo del post, usato anche per il nome del file."
+      - name: intro
+        label: Introduzione
+        type: text
+        required: true
+        description: "Breve riassunto mostrato nell'elenco dei post."
+      - name: tag
+        label: Tag
+        type: select
+        required: true
+        description: "Categoria del post."
+        options:
+          values:
+            - name: workshop
+              label: Workshop / evento
+            - name: allenamenti
+              label: Allenamenti
+            - name: musica
+              label: Musica
+            - name: altro
+              label: Altro
+      - name: author
+        label: Autore
+        type: select
+        required: true
+        description: "Per aggiungere un autore, vedi docs/CMS.md."
+        options:
+          values:
+            - name: galo
+              label: Galo Preto
+      - name: pubDate
+        label: Data di pubblicazione
+        type: date
+        required: true
+        description: "La data mostrata sul sito."
+        options:
+          format: "yyyy-MM-dd"
+      - name: image
+        label: Immagine di copertina
+        type: image
+        description: "Immagine principale del post (opzionale)."
+      - name: body
+        label: Testo
+        type: rich-text
+        required: true
+        description: "Contenuto del post. Puoi usare titoli, elenchi, link e immagini."
+
+  - name: pagine
+    label: Pagine
+    type: collection
+    path: src/content/page
+    exclude:
+      - canzoni.md
+      - galleria.md
+    filename: "{primary}.md"
+    operations:
+      create: false
+      rename: false
+      delete: false
+    view:
+      primary: title
+      sort: title
+      order: asc
+    fields:
+      - name: title
+        label: Titolo
+        type: string
+        required: true
+      - name: intro
+        label: Introduzione
+        type: text
+        required: true
+        description: "Breve descrizione usata nei metadati della pagina."
+      - name: image
+        label: Immagine
+        type: image
+      - name: body
+        label: Testo
+        type: rich-text
+        description: "Contenuto della pagina."
+
+  - name: galleria
+    label: Galleria
+    type: file
+    path: src/content/page/galleria.md
+    fields:
+      - name: title
+        label: Titolo
+        type: string
+        required: true
+      - name: intro
+        label: Introduzione
+        type: text
+        required: true
+      - name: image
+        label: Immagine di copertina
+        type: image
+      - name: gallery
+        label: Immagini della galleria
+        type: image
+        description: "Immagini mostrate nella griglia. Puoi aggiungerle, rimuoverle e riordinarle."
+        options:
+          multiple: true
+          unique: true
+
+  - name: canzoni
+    label: Canzoni
+    type: file
+    path: src/content/page/canzoni.md
+    fields:
+      - name: title
+        label: Titolo
+        type: string
+        required: true
+      - name: intro
+        label: Introduzione
+        type: text
+        required: true
+      - name: image
+        label: Immagine
+        type: image
+      - name: body
+        label: Testi, player audio e HTML
+        type: code
+        description: "Questa pagina contiene anche i player audio e i tag HTML <details>. Modifica solo i testi se non sei sicuro."
+        options:
+          format: md
+        required: true
+
+  - name: autori
+    label: Autori
+    type: collection
+    path: src/content/author
+    filename: "{primary}.json"
+    operations:
+      delete: false
+    view:
+      primary: displayName
+      sort: displayName
+      order: asc
+    fields:
+      - name: displayName
+        label: Nome visualizzato
+        type: string
+        required: true
+      - name: bio
+        label: Biografia
+        type: text
+        description: "Testo mostrato sotto i post dell'autore."
+      - name: photo
+        label: Foto
+        type: image

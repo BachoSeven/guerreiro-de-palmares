@@ -1,4 +1,9 @@
 # ☕ Pacamara - a blog theme for Astro
+
+> **Editing content:** this site uses [Pages CMS](https://pagescms.org/), not
+> Decap CMS. See [docs/CMS.md](docs/CMS.md) for setup and editor instructions.
+> `/admin` redirects to the Pages CMS editor.
+
 **Pacamara** is a simple blog theme for **Astro** that uses `md` and `mdx` files to store your content.
 
 You can see it live in action [**here**](https://pacamara-astro-6y7xr.kinsta.page/).

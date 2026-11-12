@@ -5,7 +5,7 @@ intro: Sabato 30 novembre, presso il Circolo Arci "Casa del Popolo" a Campo,
   💃 con Mestre Omi.
 tag: workshop
 author: galo
-pubDate: 2024-11-19T18:16:00.000Z
+pubDate: 2024-11-19
 image: ../../assets/uploads/a.jpeg
 ---
 Sabato 30 novembre, presso il Circolo Arci "Casa del Popolo" a Campo, Pisa, a partire dalle 14 si svolgerà un workshop di capoeira 🤸🏻‍♂️ e danza 💃 con Mestre Omi.

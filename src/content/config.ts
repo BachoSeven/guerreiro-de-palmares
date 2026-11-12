@@ -19,6 +19,7 @@ const pageCollection = defineCollection({
         title: z.string(),
         intro: z.string(),
         image: image().optional(),
+        gallery: z.array(image()).optional(),
         type: z.string().optional(),
     }),
 });
