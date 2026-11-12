@@ -52,6 +52,29 @@ The CMS configuration is [`.pages.yml`](../.pages.yml) at the repository root.
 New post filenames are generated from the title, e.g.
 `V Encontro Anual` → `v-encontro-anual.md`.
 
+## Formatting text (important for editors)
+
+The Pages CMS editor is “Notion-style”: it does **not** show a permanent
+toolbar. The formatting buttons appear when text is selected.
+
+- **Bold / italic / headings / lists / links**: select the text first. A small
+  toolbar appears above the selection.
+- **New heading or list**: type `/` on an empty line to open the block menu, or
+  use Markdown shortcuts at the start of a line:
+  - `# ` → heading 1
+  - `## ` → heading 2
+  - `- ` → bullet list
+  - `1. ` → numbered list
+  - `> ` → quote
+  - `**text**` → bold
+  - `*text*` → italic
+- The **Editor / Source** switch is available for advanced users who prefer raw
+  Markdown.
+
+If this is too hidden for your editors, the alternative is Decap CMS with
+[DecapBridge](https://decapbridge.com/), which has a permanent toolbar and
+email invites. See the fallback section below.
+
 ## Adding a new tag or author
 
 The blog form uses selects to avoid typos:

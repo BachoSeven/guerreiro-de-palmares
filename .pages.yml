@@ -80,10 +80,10 @@ content:
         type: image
         description: "Immagine principale del post (opzionale)."
       - name: body
-        label: Testo
+        label: Testo (seleziona per formattare)
         type: rich-text
         required: true
-        description: "Contenuto del post. Puoi usare titoli, elenchi, link e immagini."
+        description: "Per formattare: seleziona una parola o una frase e usa i pulsanti che compaiono sopra il testo (grassetto, corsivo, titoli, elenchi, link). In alternativa scrivi / per il menu dei blocchi."
 
   - name: pagine
     label: Pagine
@@ -115,9 +115,9 @@ content:
         label: Immagine
         type: image
       - name: body
-        label: Testo
+        label: Testo (seleziona per formattare)
         type: rich-text
-        description: "Contenuto della pagina."
+        description: "Per formattare: seleziona una parola o una frase e usa i pulsanti che compaiono sopra il testo. In alternativa scrivi / per il menu dei blocchi."
 
   - name: galleria
     label: Galleria
